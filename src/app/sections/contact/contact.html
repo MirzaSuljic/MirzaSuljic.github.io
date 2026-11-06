@@ -1,0 +1,33 @@
+<section id="contact" aria-labelledby="contact-heading" class="px-5 py-20 sm:px-8 md:py-28">
+  <div class="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-accent px-6 py-14 text-paper sm:px-12 md:py-20">
+    <div class="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full border border-paper/15"></div>
+    <div class="pointer-events-none absolute -right-8 -top-8 size-40 rounded-full border border-paper/15"></div>
+
+    <p class="font-mono text-sm uppercase tracking-[0.18em] text-paper/70">05 · Contact</p>
+    <h2 id="contact-heading" class="mt-5 max-w-2xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+      Have a role or a project in mind? Let's talk.
+    </h2>
+    <p class="mt-5 max-w-xl text-lg leading-relaxed text-paper/80">
+      The fastest way to reach me is email. I usually reply within a day.
+    </p>
+
+    <a [href]="'mailto:' + profile.email" class="mt-9 inline-block break-all text-2xl font-semibold underline decoration-paper/40 underline-offset-8 hover:decoration-paper sm:text-3xl">
+      {{ profile.email }}
+    </a>
+
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a [href]="profile.linkedin" target="_blank" rel="noopener" [class]="button.onDark">
+        <app-icon name="linkedin" [size]="16" />
+        LinkedIn
+      </a>
+      <a [href]="profile.github" target="_blank" rel="noopener" [class]="button.onDarkOutline">
+        <app-icon name="github" [size]="16" />
+        GitHub
+      </a>
+      <a [href]="profile.cvUrl" download [class]="button.onDarkOutline">
+        <app-icon name="download" [size]="16" />
+        Download CV
+      </a>
+    </div>
+  </div>
+</section>

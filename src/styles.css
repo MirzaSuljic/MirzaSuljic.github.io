@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-paper: #f6f4ef;
+  --color-sand: #ece8de;
+  --color-line: #dcd7cb;
+  --color-ink: #14171c;
+  --color-muted: #59606c;
+  --color-accent: #1f4e79;
+  --color-accent-soft: #dce6f1;
+  --color-accent-bright: #2e75b6;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+    scrollbar-gutter: stable;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-paper;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-bright;
+  }
+}

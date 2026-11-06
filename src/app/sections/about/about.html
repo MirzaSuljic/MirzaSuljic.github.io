@@ -1,0 +1,21 @@
+<section id="about" aria-labelledby="about-heading" class="border-t border-line">
+  <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 md:py-28 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
+    <div>
+      <app-section-heading index="01" label="About" headingId="about-heading" />
+      <div class="mt-8 space-y-5 text-lg leading-relaxed">
+        @for (paragraph of paragraphs; track $index) {
+          <p [class.text-muted]="!$first" [class.text-xl]="$first">{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+
+    <dl class="grid grid-cols-2 gap-px self-start overflow-hidden rounded-2xl bg-line ring-1 ring-line">
+      @for (fact of facts; track fact.label) {
+        <div class="flex flex-col bg-paper p-6">
+          <dt class="order-2 mt-2 text-sm leading-snug text-muted">{{ fact.label }}</dt>
+          <dd class="order-1 text-4xl font-semibold tracking-tight text-accent">{{ fact.value }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>

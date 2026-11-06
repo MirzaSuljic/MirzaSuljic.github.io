@@ -1,0 +1,60 @@
+<section id="projects" aria-labelledby="projects-heading" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div>
+        <app-section-heading index="03" label="Projects" headingId="projects-heading" />
+        <p class="mt-6 max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+          Side projects where I try new tools, from Angular signals to Spring Boot.
+        </p>
+      </div>
+      <a [href]="github + '?tab=repositories'" target="_blank" rel="noopener" [class]="button.secondary + ' self-start md:self-auto'">
+        <app-icon name="github" [size]="16" />
+        All repositories
+      </a>
+    </div>
+
+    <ul class="mt-14 grid gap-6 md:grid-cols-2">
+      @for (project of projects; track project.repo) {
+        <li>
+          <article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white/60 ring-1 ring-line transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-24px_rgb(20_23_28/0.45)] hover:ring-ink/30 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+            <div class="flex items-center gap-2 border-b border-line bg-sand/70 px-5 py-3">
+              <span class="size-2.5 rounded-full bg-line"></span>
+              <span class="size-2.5 rounded-full bg-line"></span>
+              <span class="size-2.5 rounded-full bg-line"></span>
+              <span class="ml-2 truncate font-mono text-xs text-muted">~/MirzaSuljic/{{ project.repo }}</span>
+            </div>
+
+            <div class="flex flex-1 flex-col p-6 sm:p-7">
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="text-2xl font-semibold tracking-tight">{{ project.name }}</h3>
+                @if (project.inProgress) {
+                  <span class="mt-1 shrink-0 rounded-full bg-accent-soft px-2.5 py-1 font-mono text-[11px] font-medium text-accent">In progress</span>
+                }
+              </div>
+              <p class="mt-3 leading-relaxed text-muted">{{ project.summary }}</p>
+
+              <ul class="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+                @for (tech of project.tech; track tech) {
+                  <li class="rounded-md bg-accent-soft/60 px-2.5 py-1 font-mono text-xs text-accent">{{ tech }}</li>
+                }
+              </ul>
+
+              <div class="mt-auto flex flex-wrap gap-x-6 gap-y-2 pt-7 text-sm font-semibold">
+                <a [href]="github + '/' + project.repo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-accent">
+                  <app-icon name="github" [size]="16" />
+                  Code<span class="sr-only"> for {{ project.name }}</span>
+                </a>
+                @if (project.liveUrl; as live) {
+                  <a [href]="live" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-accent">
+                    <app-icon name="external" [size]="16" />
+                    Live demo<span class="sr-only"> of {{ project.name }}</span>
+                  </a>
+                }
+              </div>
+            </div>
+          </article>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
