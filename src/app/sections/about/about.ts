@@ -17,7 +17,7 @@ export class About {
   protected readonly facts: Fact[] = [
     { value: `${yearsSince(PROFILE.careerStart)}+`, label: 'years building software' },
     { value: `${yearsSince(EXPERIENCE[0].start)}`, label: 'years leading Angular development' },
-    { value: '2', label: 'platforms shipped to production: web and Android' },
+    { value: '3', label: 'platforms shipped to production: web and Android' },
     { value: `${EXPERIENCE.length}`, label: 'companies, from support desk to tech lead' },
   ];
 }

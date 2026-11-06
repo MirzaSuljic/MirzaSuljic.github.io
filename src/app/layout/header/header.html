@@ -9,7 +9,7 @@
       @for (link of links; track link.href) {
         <a [href]="link.href" class="rounded-full px-3 py-2 text-sm text-muted transition-colors hover:text-ink">{{ link.label }}</a>
       }
-      <a [href]="profile.cvUrl" download [class]="button.primary + ' ml-3'">
+      <a [href]="profile.cvUrl" download appTrackCv="header" [class]="button.primary + ' ml-3'">
         <app-icon name="download" [size]="16" />
         CV
       </a>
@@ -36,7 +36,7 @@
           </li>
         }
       </ul>
-      <a [href]="profile.cvUrl" download [class]="button.primary + ' mt-5 w-full'">
+      <a [href]="profile.cvUrl" download appTrackCv="mobile-menu" [class]="button.primary + ' mt-5 w-full'">
         <app-icon name="download" [size]="16" />
         Download CV
       </a>

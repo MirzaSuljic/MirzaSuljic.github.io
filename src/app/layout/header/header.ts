@@ -3,11 +3,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { PROFILE } from '../../data/profile';
 import { BUTTON } from '../../shared/buttons';
 import { Icon } from '../../shared/icon/icon';
+import { TrackCv } from '../../shared/track-cv/track-cv';
 
 @Component({
   selector: 'app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [Icon],
+  imports: [Icon, TrackCv],
   templateUrl: './header.html',
   host: { '(document:keydown.escape)': 'open.set(false)' },
 })

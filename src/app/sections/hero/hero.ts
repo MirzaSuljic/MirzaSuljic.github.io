@@ -3,12 +3,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PROFILE } from '../../data/profile';
 import { BUTTON } from '../../shared/buttons';
 import { Icon } from '../../shared/icon/icon';
+import { TrackCv } from '../../shared/track-cv/track-cv';
 import { yearsSince } from '../../utils/dates';
 
 @Component({
   selector: 'app-hero',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [Icon],
+  imports: [Icon, TrackCv],
   templateUrl: './hero.html',
 })
 export class Hero {
