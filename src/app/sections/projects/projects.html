@@ -14,7 +14,7 @@
     </div>
 
     <ul class="mt-14 grid gap-6 md:grid-cols-2">
-      @for (project of projects; track project.repo) {
+      @for (project of projects(); track project.repo) {
         <li>
           <article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white/60 ring-1 ring-line transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-24px_rgb(20_23_28/0.45)] hover:ring-ink/30 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
             <div class="flex items-center gap-2 border-b border-line bg-sand/70 px-5 py-3">
@@ -38,6 +38,16 @@
                   <li class="rounded-md bg-accent-soft/60 px-2.5 py-1 font-mono text-xs text-accent">{{ tech }}</li>
                 }
               </ul>
+
+              @if (project.updatedAgo) {
+                <p class="mt-5 flex min-w-0 items-center gap-2 font-mono text-xs text-muted">
+                  <span class="size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
+                  <span class="shrink-0">Updated <time [attr.datetime]="project.pushedAt">{{ project.updatedAgo }}</time></span>
+                  @if (project.lastCommit; as commit) {
+                    <a [href]="commit.url" target="_blank" rel="noopener" class="truncate hover:text-accent" [title]="commit.message">· {{ commit.message }}</a>
+                  }
+                </p>
+              }
 
               <div class="mt-auto flex flex-wrap gap-x-6 gap-y-2 pt-7 text-sm font-semibold">
                 <a [href]="github + '/' + project.repo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-accent">

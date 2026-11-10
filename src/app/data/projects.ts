@@ -2,6 +2,14 @@ import type { Project } from '../models';
 
 export const PROJECTS: Project[] = [
   {
+    name: 'luv2shop',
+    repo: 'AngularEcommerce',
+    summary:
+      'A full stack shop with a category sidebar, cart and checkout, JWT login, member discounts on top of sale prices and an admin panel for products, categories and members.',
+    tech: ['Angular 22', 'Tailwind CSS', 'Spring Boot 4', 'PostgreSQL'],
+    liveUrl: 'https://luv2shop-ex.netlify.app/',
+  },
+  {
     name: 'Watchlist',
     repo: 'angularMovieDB',
     summary:
