@@ -12,6 +12,10 @@ describe('detect-tech', () => {
     expect(techFromPackageJson(react)).toEqual(['React 19', 'React Router 7', 'Vite']);
 
     expect(techFromPackageJson(JSON.stringify({ dependencies: { next: '15.0.0', react: '19.0.0' } }))).toEqual(['Next.js 15']);
+    const ember = JSON.stringify({
+      devDependencies: { 'ember-source': '~3.14.1', 'ember-data': '~3.14.0', 'ember-cli-mirage': '^1.1.6', bootstrap: '^4.4.1' },
+    });
+    expect(techFromPackageJson(ember)).toEqual(['Ember.js 3', 'Ember Data', 'Mirage JS', 'Bootstrap']);
     expect(techFromPackageJson('not json')).toEqual([]);
   });
 

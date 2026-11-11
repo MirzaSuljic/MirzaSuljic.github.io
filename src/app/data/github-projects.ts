@@ -15,7 +15,7 @@ const MAX_COMMIT_LOOKUPS = 12;
 
 const CACHE_KEY = 'github-projects-v3';
 /** detected tech per repo, kept across visits (only read again after a new push) */
-const TECH_CACHE_KEY = 'github-tech-v1';
+const TECH_CACHE_KEY = 'github-tech-v2';
 /** check GitHub again after this many minutes (while the page is open, and when the tab is shown again) */
 const REFRESH_MINUTES = 5;
 
