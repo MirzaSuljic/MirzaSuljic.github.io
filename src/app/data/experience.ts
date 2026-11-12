@@ -5,7 +5,7 @@ export const EXPERIENCE: Job[] = [
     company: 'ABC TECH Group',
     role: 'Software Development Engineer',
     start: '2021-03',
-    end: null,
+    end: '2026-10',
     location: 'Tuzla, Bosnia and Herzegovina',
     highlights: [
       'Lead Angular development of enterprise-grade web products, including an internet banking platform.',
